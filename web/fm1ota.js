@@ -212,18 +212,26 @@ export class Updater {
     return s2;
   }
 
-  // resume: the device is already in update mode (loader) -> true when the write finished
+  // resume: the device is already in update mode (loader) -> true when the write finished. product: the
+  // package's identity; the loader's model must match it by install()'s rule (sameKeyboard), and without the
+  // identity, or with only another model's loader present, nothing is written ('model')
   async resume(image, onStep, product = null) {
-    const model = product && product.split("_")[0];
-    const ota = await this.find((id) => model ? id.model === "ota-" + model : IS_OTA(id));
-    if (!ota) return false;
+    const model = product ? product.split("_")[0] : "";
+    const loaderOf = (id) => IS_OTA(id) && !!model && sameKeyboard(id.model.replace(/^ota-/i, ""), model);
+    const ota = await this.find(loaderOf);
+    if (!ota) {
+      const other = await this.find(IS_OTA);
+      if (!other) return false;
+      other.link.close();
+      throw fail("model", `the device is in the update mode of ${other.id.text}, the package is for ${product || "an unknown model"}`, other.id.text);
+    }
     const step = onStep || (() => {});
     const result = await this.write(ota, image, step);
     if (!result.finished) return false;
     if (product) {
       step("reboot");
       await sleep(3000);
-      const back = await this.waitFor((id) => id.model === model, 40000);
+      const back = await this.waitFor((id) => !IS_OTA(id) && sameKeyboard(id.model, model), 40000);
       if (!back) throw fail("noreturn", "The FM-1 did not return after resuming the write.");
       back.link.close();
       if (back.id.text !== product) throw fail("mismatch", "The FM-1 reports a different firmware after resuming.", back.id.text);
