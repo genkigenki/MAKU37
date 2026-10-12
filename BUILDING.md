@@ -59,7 +59,7 @@ Build options (environment, `0` or `1`; defaults in `firmware/src/felucca.c`, `c
 | `FELUCCA_CDC_DEFAULT` | 1 | `0`: the console is built in but left out of USB from boot (as MENU > USB SERIAL OFF) |
 | `FELUCCA_UAC` | 1 | USB audio input (the master output, stereo, 44.1 or 48 kHz) |
 | `FELUCCA_UAC_48K` | 1 | `0`: the USB audio input at 44.1 kHz only, as up to 1.0.5.2 (`firmware/src/usb.c`) |
-| `FELUCCA_UART` | 1 (SMK-37 Pro: 0) | TRS MIDI IN; must stay 0 on the SMK-37 Pro (PH8 is a key row there) |
+| `FELUCCA_UART` | 1 (SMK-37: 0) | TRS MIDI IN; must stay 0 on the SMK-37 (PH8 is a key row there) |
 | `FELUCCA_SLICE` | 1 | the SLICE engine |
 | `FELUCCA_ICONS` | 1 | parameter icons on the knob cards |
 | `FELUCCA_FM4` | 0 | the retired DIGITAL engine (4-operator FM) instead of its FM6 conversion |
@@ -68,7 +68,7 @@ Build options (environment, `0` or `1`; defaults in `firmware/src/felucca.c`, `c
 `firmware/src/usb.c`.
 
 Target board: `BOARD=smk37 ./build.sh` (or `./build.sh --board smk37`) builds MAKU37, MAKU for the M-Vave
-SMK-37 Pro: `-DBOARD_SMK37=1` for the app and the update loader, identity `SMK-37 Pro_900` (release
+SMK-37: `-DBOARD_SMK37=1` for the app and the update loader, identity `SMK-37 Pro_900` (release
 `SMK-37 Pro_9XY`, package `build/release-X.Y/maku37-X.Y.fwsc`), the SMK flash layout (PRCT 0x9D000, the stock region
 table with USRTRIM / USRFLASH), the store owner tag `MAKU`, and the package `build/maku37.fwsc`. The intermediate files
 (`build/felucca.bin`, `build/loader/ota.bin`, `build/felucca.dis`) are shared: build the FM-1 again before

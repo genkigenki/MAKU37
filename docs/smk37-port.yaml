@@ -1,4 +1,4 @@
-# smk37-port.yaml: every decision of the MAKU37 port (MAKU on the M-Vave SMK-37 Pro), in one place.
+# smk37-port.yaml: every decision of the MAKU37 port (MAKU on the M-Vave SMK-37), in one place.
 # From the fm1-to-smk37 kit (github.com/genkigenki/fm1-to-smk37), filled from the owner's answers. Change this file
 # first, then the code. The controls as built: docs/SMK37.md.
 

@@ -1,15 +1,15 @@
-# MAKU37: MAKU on the M-Vave SMK-37 Pro
+# MAKU37: MAKU on the M-Vave SMK-37
 
 `BOARD=smk37 ./build.sh` builds `build/maku37.fwsc` (identity `SMK-37 Pro_900`). Everything sits behind
 `BOARD_SMK37`; the FM-1 build is byte-identical. The decisions: [smk37-port.yaml](smk37-port.yaml). The board layer
-(keys, pads, faders, wheels, display, LEDs, flash map, update path) comes from Felucca's SMK-37 Pro target
+(keys, pads, faders, wheels, display, LEDs, flash map, update path) comes from Felucca's SMK-37 target
 (hugelton/Felucca#237), following the [fm1-to-smk37](https://github.com/genkigenki/fm1-to-smk37) guide.
 
 Status: builds and passes the host tests; **not yet tried on a unit**.
 
 ## Controls
 
-| SMK-37 Pro | MAKU37 |
+| SMK-37 | MAKU37 |
 | --- | --- |
 | K1 | MASTER (output volume) |
 | K2 / K3 / K4 | the focused part's three macros (SELECT, PRESETS = TONE, ALGORITHM); a verb held: RISE / HOLD / FADE |

@@ -1,7 +1,7 @@
-# MAKU37: MAKU for the M-Vave SMK-37 Pro
+# MAKU37: MAKU for the M-Vave SMK-37
 
 **MAKU37** is a port of **[MAKU](https://github.com/okumurari2/maku) by
-[okumurari2](https://github.com/okumurari2)** to the **M-Vave SMK-37 Pro** keyboard (same JieLi AC791N chip
+[okumurari2](https://github.com/okumurari2)** to the **M-Vave SMK-37** keyboard (SMK-37 Pro, Elite or MKE-P37; same JieLi AC791N chip
 as the FM-1, a different panel). MAKU is an always-on ambience machine: power it on and a new, random,
 in-key world is already playing. Four parts (a pulse, a floor, a haze, a voice), buttons that are verbs
 (sink, cascade, swell, wobble, lift, scramble, drift), and your likes, from which the new worlds grow.
@@ -16,7 +16,7 @@ Unofficial: not affiliated with or endorsed by M-Vave, okumurari2 or Hügelton I
 
 Everything about MAKU itself (the parts, the verbs, the likes, the spec) is MAKU's: read the upstream
 [README-UPSTREAM.md](README-UPSTREAM.md) and [docs/SPEC.md](docs/SPEC.md). This page covers what is
-different on the SMK-37 Pro.
+different on the SMK-37.
 
 <p align="center"><img src="docs/screenshot-pulse.png" alt="MAKU's screen: part 1 (pulse) has focus; four volume bars, BPM, and the macros" width="360"></p>
 
@@ -26,18 +26,18 @@ different on the SMK-37 Pro.
   <https://okumurari2.github.io/maku/>). Its own credits (engines, samples, fonts, contributors) are in
   [README-UPSTREAM.md](README-UPSTREAM.md#credits).
 - **Felucca** by Leo Kuroshita (Hügelton Instruments): <https://github.com/hugelton/Felucca>, the FM-1
-  platform MAKU is built on, including its SMK-37 Pro board layer.
+  platform MAKU is built on, including its SMK-37 board layer.
 - **Port**: genkigenki, ported with the [fm1-to-smk37](https://github.com/genkigenki/fm1-to-smk37) kit
   (hardware facts, flash map, update path, backup and recovery).
 
-## What the SMK-37 Pro adds
+## What the SMK-37 adds
 
 Everything sits behind one build switch, `BOARD_SMK37` (`BOARD=smk37`); the FM-1 build of this tree is
 byte for byte MAKU's. The SMK gives MAKU more hands: the verbs get a button row and two wheels, the 16 pads
 hold your likes, and the faders hold verb amounts where you leave them. Details:
 [docs/SMK37.md](docs/SMK37.md), the decisions: [docs/smk37-port.yaml](docs/smk37-port.yaml).
 
-| SMK-37 Pro | MAKU37 |
+| SMK-37 | MAKU37 |
 | --- | --- |
 | K1 | MASTER (output volume) |
 | K2 / K3 / K4 | the focused part's three macros (SELECT, PRESETS = TONE, ALGORITHM); a verb held: RISE / HOLD / FADE |
@@ -115,7 +115,7 @@ tests/run_tests.sh                        # MAKU's tests plus the SMK board test
 
 ## License
 
-GPL-3.0-only, as MAKU and Felucca: see [LICENSE](LICENSE) and [LICENSING.md](LICENSING.md). The SMK-37 Pro
+GPL-3.0-only, as MAKU and Felucca: see [LICENSE](LICENSE) and [LICENSING.md](LICENSING.md). The SMK-37
 changes are under the same license. This repository contains no stock firmware, no flash dumps and no vendor
 code.
 
