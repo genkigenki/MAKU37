@@ -18,8 +18,10 @@ delivery:
   boot_logo: none           # MAKU's own power-on (the swell from silence)
   credit: ""
 
-models:
-  - pro                     # the SMK-37 Pro only for now (the Felucca board layer has no MODEL switch yet)
+models:                     # one package per model (MODEL=pro|elite|mke), each keeps that model's identity
+  - pro                     # SMK-37 Pro: build/maku37.fwsc
+  - elite                   # SMK-37 Elite: build/maku37-elite.fwsc
+  - mke                     # MKE-P37: build/maku37-mke.fwsc
 
 keys:
   middle: fm1               # keys 5..31 (F3..G5) = the FM-1's 27 keys: the focused part's sound; the pulse focused: 16 steps
