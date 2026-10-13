@@ -1,13 +1,17 @@
 # MAKU37: MAKU for the M-Vave SMK-37
 
-**MAKU37** is a port of **[MAKU](https://github.com/okumurari2/maku) by
-[okumurari2](https://github.com/okumurari2)** to the **M-Vave SMK-37** keyboard (SMK-37 Pro, Elite or MKE-P37; same JieLi AC791N chip
+> Unofficial SMK-37 build of [MAKU](https://github.com/okumurari2/maku) by **okumurari2**. Offered upstream as
+> [okumurari2/maku#4](https://github.com/okumurari2/maku/pull/4); once merged, use the original project and this
+> repo will be archived. All credit to okumurari2.
+
+This is **[MAKU](https://github.com/okumurari2/maku) by
+[okumurari2](https://github.com/okumurari2)** built for the **M-Vave SMK-37** keyboard (SMK-37 Pro, Elite or MKE-P37; same JieLi AC791N chip
 as the FM-1, a different panel). MAKU is an always-on ambience machine: power it on and a new, random,
 in-key world is already playing. Four parts (a pulse, a floor, a haze, a voice), buttons that are verbs
 (sink, cascade, swell, wobble, lift, scramble, drift), and your likes, from which the new worlds grow.
 
 All of that is okumurari2's work. This port only maps MAKU onto the SMK's controls; it is also offered
-upstream as [okumurari2/maku#3](https://github.com/okumurari2/maku/pull/3).
+upstream as [okumurari2/maku#4](https://github.com/okumurari2/maku/pull/4).
 
 Unofficial: not affiliated with or endorsed by M-Vave, okumurari2 or Hügelton Instruments.
 
@@ -27,7 +31,7 @@ different on the SMK-37.
   [README-UPSTREAM.md](README-UPSTREAM.md#credits).
 - **Felucca** by Leo Kuroshita (Hügelton Instruments): <https://github.com/hugelton/Felucca>, the FM-1
   platform MAKU is built on, including its SMK-37 board layer.
-- **Port**: genkigenki, ported with the [fm1-to-smk37](https://github.com/genkigenki/fm1-to-smk37) kit
+- **SMK-37 mapping**: made with the [fm1-to-smk37](https://github.com/genkigenki/fm1-to-smk37) kit
   (hardware facts, flash map, update path, backup and recovery).
 
 ## What the SMK-37 adds
